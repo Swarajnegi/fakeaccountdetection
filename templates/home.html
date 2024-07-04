@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Fake Account Detection</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="profile_pic" placeholder="Whether the account has a profile picture (1) or not (0)" required="required" /><br>
+    	<input type="text" name="ratio_numlen_username" placeholder="Ratio of numeric characters in the account username to its length" required="required" /><br>
+        <input type="text" name="len_fullname" placeholder="Number of characters in the user's full name" required="required" /><br>
+        <input type="text" name="ratio_numlen_fullname" placeholder="Ratio of numeric characters in the user's full name to its length" required="required" /><br>
+        <input type="text" name="len_desc" placeholder="Number of characters in the account description" required="required" /><br>
+        <input type="text" name="extern_url" placeholder="Whether the account description includes a URL (1) or not (2)" required="required" /><br>
+        <input type="text" name="private" placeholder="Whether the account is private (1) or not (2)." required="required" /><br>
+        <input type="text" name="num_posts" placeholder="Number of posts in the user account" required="required" /><br>
+        <input type="text" name="num_followers" placeholder="Number of Instagram users following the account" required="required" /><br>
+        <input type="text" name="num_following" placeholder="Number of Instagram users followed by the account" required="required" /><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>

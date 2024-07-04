@@ -25,5 +25,17 @@ def predict_api():
     print(message)
     return jsonify({'message': message})
 
+@app.route('/predict',methods=['POST'])
+def predict():
+    data=[float(x) for x in request.form.values()]
+    final_input = np.array(data).reshape(1,-1)
+    print(final_input)
+    output = knnmodel.predict(final_input)
+    if output==0:
+        message = 'not Spam!'
+    else:
+        message = 'Spam!'
+    return render_template('home.html',prediction_text='This account is {}'.format(message))
+
 if __name__ == "__main__":
     app.run(debug=True)
