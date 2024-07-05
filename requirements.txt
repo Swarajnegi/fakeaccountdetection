@@ -2,12 +2,12 @@ numpy==1.24.2
 pandas
 matplotlib
 seaborn
-pdpipe
+#pdpipe
 autoviz
 scikit-learn
-tensorflow
-keras
-keras-tuner
+#tensorflow
+#keras
+#keras-tuner
 gunicorn
 ipykernel
 setuptools>=65.5.0
