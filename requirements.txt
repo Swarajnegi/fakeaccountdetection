@@ -1,4 +1,4 @@
-numpy
+numpy==1.24.2
 pandas
 matplotlib
 seaborn
@@ -9,3 +9,4 @@ tensorflow
 keras
 keras-tuner
 gunicorn
+ipykernel
