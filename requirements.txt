@@ -5,7 +5,7 @@ matplotlib
 seaborn
 pdpipe
 autoviz
-sklearn
+scikit-learn
 tensorflow
 keras
 keras-tuner
