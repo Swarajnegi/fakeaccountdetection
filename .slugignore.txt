@@ -1,0 +1,17 @@
+# Ignore data files
+*.csv
+*.tsv
+
+# Ignore markdown files
+*.md
+
+# Ignore notebooks
+*.ipynb
+
+# Ignore Git-related files
+.gitignore
+.gitattributes
+
+# Ignore directories
+Input/
+
