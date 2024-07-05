@@ -10,3 +10,5 @@ keras
 keras-tuner
 gunicorn
 ipykernel
+setuptools>=65.5.0
+wheel>=0.37.1
