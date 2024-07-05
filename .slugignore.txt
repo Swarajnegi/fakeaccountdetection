@@ -2,16 +2,29 @@
 *.csv
 *.tsv
 
-# Ignore markdown files
-*.md
-
-# Ignore notebooks
+# Ignore Jupyter Notebooks
 *.ipynb
 
 # Ignore Git-related files
-.gitignore
+.git/
 .gitattributes
+.gitignore
 
-# Ignore directories
+# Ignore OS-specific files
+.DS_Store
+
+# Ignore development directories
+fakeaccdet/
+my_dir/
 Input/
+.github/
 
+# Ignore large model files if not required in the slug
+model_resnet.h5
+
+# Ignore Python virtual environment directories if any
+__pycache__/
+*.py[cod]
+
+# Ignore other unnecessary files and directories
+fake-social-media-account-detection (1)/
