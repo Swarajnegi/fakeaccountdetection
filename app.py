@@ -20,13 +20,15 @@ import os
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-# Determine the directory of the current script
+# Load your CSV dataset
+data_path = r"E:\Program Files (x86)\ML Project\Fake_social_media\fakeaccountdetection\Input\social_media_train\social_media_train.csv"
+data_ = pd.read_csv(data_path)
+
 current_dir = os.path.dirname(__file__)
-data_path = os.path.join(current_dir, 'Input', 'social_media_train', 'social_media_train.csv')
+data_path_ = os.path.join(current_dir, 'Input', 'social_media_train', 'social_media_train.csv')
 
 # Print out the resolved path for debugging
-print(f"Resolved data path: {data_path}")
-
+print(f"Resolved data path: {data_path_}")
 
 # Load your models
 model_svm = pickle.load(open('model_svm.pkl', 'rb'))
