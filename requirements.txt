@@ -1,5 +1,7 @@
 numpy==1.24.2
 pandas
+Flask
+streamlit
 matplotlib
 seaborn
 #pdpipe
