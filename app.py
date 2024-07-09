@@ -30,7 +30,6 @@ print(f"Resolved data path: {data_path}")
 # Check if the file exists
 if os.path.exists(data_path):
     data_ = pd.read_csv(data_path)
-    st.write(data_)  # Replace with your Streamlit logic
 else:
     st.error(f"CSV file '{data_path}' not found.")
 
