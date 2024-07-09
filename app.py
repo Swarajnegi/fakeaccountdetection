@@ -20,15 +20,19 @@ import os
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-# Load your CSV dataset
-data_path = r"E:\Program Files (x86)\ML Project\Fake_social_media\fakeaccountdetection\Input\social_media_train\social_media_train.csv"
-data_ = pd.read_csv(data_path)
-
+# Determine the directory of the current script
 current_dir = os.path.dirname(__file__)
-data_path_ = os.path.join(current_dir, 'Input', 'social_media_train', 'social_media_train.csv')
+data_path = os.path.join(current_dir, 'Input', 'social_media_train', 'social_media_train.csv')
 
 # Print out the resolved path for debugging
-print(f"Resolved data path: {data_path_}")
+print(f"Resolved data path: {data_path}")
+
+# Check if the file exists
+if os.path.exists(data_path):
+    data_ = pd.read_csv(data_path)
+    st.write(data_)  # Replace with your Streamlit logic
+else:
+    st.error(f"CSV file '{data_path}' not found.")
 
 # Load your models
 model_svm = pickle.load(open('model_svm.pkl', 'rb'))
@@ -51,6 +55,7 @@ def perform_data_visualization(data):
 
     # Pairplot
     st.write('### Pairplot')
+    
     pairplot = sns.pairplot(data, hue='fake')  # Replace 'target_variable' with your actual target variable
     st.pyplot(pairplot)
 
