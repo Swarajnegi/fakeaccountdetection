@@ -48,8 +48,11 @@ heroku open
 fake-account-detection/
 │
 ├── fakeaccdet/
+
 │   ├── Input/
+
 │   │   ├── fake_account__data_dict/
+
 │   │   ├── Instagram fake spammer/
 │   │   ├── social_media_aim/
 │   │   ├── social_media_test/
