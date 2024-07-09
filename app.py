@@ -21,7 +21,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 # Load your CSV dataset
-data_path = r"E:\Program Files (x86)\ML Project\Fake_social_media\fakeaccountdetection\Input\social_media_train\social_media_train.csv"
+data_path = "E:\Program Files (x86)\ML Project\Fake_social_media\fakeaccountdetection\Input\social_media_train\social_media_train.csv"
 data_ = pd.read_csv(data_path)
 
 # Load your models
