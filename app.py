@@ -207,7 +207,8 @@ def main():
                 num_following = st.text_input("Number of following", key='dnn_num_following')
                 if st.button('Predict'):
                     data = np.array([profile_pic, ratio_numlen_username, len_fullname, ratio_numlen_fullname, len_desc, extern_url, private, num_posts, num_followers, num_following]).reshape(1, -1).astype(float)
-                    output = model_dnn.predict_classes(data)
+                    output = model_resnet.predict(data)
+                    output = (output > 0.5).astype(int)
                     if output == 0:
                         st.success('This account is not Spam!')
                     else:
@@ -228,7 +229,8 @@ def main():
                 num_following = st.text_input("Number of following", key='lstm_num_following')
                 if st.button('Predict'):
                     data = np.array([profile_pic, ratio_numlen_username, len_fullname, ratio_numlen_fullname, len_desc, extern_url, private, num_posts, num_followers, num_following]).reshape(1, -1).astype(float)
-                    output = model_lstm.predict_classes(data)
+                    output = model_resnet.predict(data)
+                    output = (output > 0.5).astype(int)
                     if output == 0:
                         st.success('This account is not Spam!')
                     else:
@@ -249,7 +251,10 @@ def main():
                 num_following = st.text_input("Number of following", key='resnet_num_following')
                 if st.button('Predict'):
                     data = np.array([profile_pic, ratio_numlen_username, len_fullname, ratio_numlen_fullname, len_desc, extern_url, private, num_posts, num_followers, num_following]).reshape(1, -1).astype(float)
-                    output = model_resnet.predict_classes(data)
+                    # Replace predict_classes with predict and apply a threshold for binary classification
+                    output = model_resnet.predict(data)
+                    output = (output > 0.5).astype(int)
+
                     if output == 0:
                         st.success('This account is not Spam!')
                     else:
