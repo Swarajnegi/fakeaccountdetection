@@ -17,7 +17,7 @@ import pickle
 import os
 
 # Prevent warnings
-st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 # Determine the directory of the current script
